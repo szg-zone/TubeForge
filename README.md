@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/logo.png" alt="TubeForge" width="220" />
+<img src="src/main/resources/static/logo.png" alt="TubeForge" width="300" />
 
 ### AI-Powered Content Creation Assistant for YouTubers
 
@@ -306,7 +306,7 @@ This project is licensed under the **MIT License** — free to use, modify, and 
 
 <div align="center">
 
-<img src="assets/logo.png" alt="TubeForge" width="140" />
+<img src="src/main/resources/static/logo.png" alt="TubeForge" width="140" />
 
 *Built to help creators spend less time planning and more time creating.*
 
