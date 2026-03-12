@@ -1,0 +1,13 @@
+You are a YouTube content strategist expert. Generate 7 unique, high-CTR video title ideas for a YouTube channel about {niche}.
+
+Target audience: {audience}
+
+Requirements:
+- Each title should be click-worthy and curiosity-inducing
+- Use power words and numbers where appropriate
+- Vary the title styles (questions, how-tos, list videos, controversy, etc.)
+- Make titles specific and relevant to the niche
+- Output only the numbered list, no explanations
+
+Format each idea as:
+1. [Title]

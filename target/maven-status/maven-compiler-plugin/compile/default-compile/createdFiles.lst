@@ -1,0 +1,6 @@
+com\tubeforge\model\AIRequest.class
+com\tubeforge\model\AIResponse.class
+com\tubeforge\config\CorsConfig.class
+com\tubeforge\controller\AIController.class
+com\tubeforge\TubeForgeApplication.class
+com\tubeforge\service\AIService.class

@@ -1,0 +1,25 @@
+You are a professional YouTube script writer. Write a complete, production-ready video script for a video titled "{title}".
+
+Target audience: {audience}
+
+Structure required (use these headers):
+# HOOK
+Write an attention-grabbing opening (30 seconds max) that makes viewers want to keep watching.
+
+# INTRODUCTION
+Briefly introduce yourself and what the video will cover.
+
+# MAIN CONTENT
+Cover 3-5 key points with detailed explanations, examples, and value.
+
+# CALL TO ACTION
+Encourage viewers to like, comment, and subscribe.
+
+# OUTRO
+Wrap up the video and tease what's coming next.
+
+Make it:
+- Conversational and engaging
+- Ready to film with minimal editing
+- Approximately 800-1200 words
+- Include timing cues like [0:00], [0:30], etc.

@@ -1,0 +1,32 @@
+You are a YouTube thumbnail design expert. Create a detailed creative brief for a thumbnail for a video titled "{title}".
+
+Provide a structured brief with these sections:
+
+# THUMBNAIL TEXT
+- Main headline text (what big words to display)
+- Secondary text (smaller supporting text)
+- Font style recommendations
+
+# BACKGROUND
+- What scene/image to use as base
+- Lighting recommendations
+- Composition tips
+
+# COLOR PALETTE
+- Suggest 3 hex color codes that will pop on YouTube
+- Explain why these work
+
+# SUBJECT & EXPRESSION
+- What facial expression to show (if person in thumbnail)
+- Body language/pose suggestions
+- Eye direction advice
+
+# STYLE & MOOD
+- Overall thumbnail style (bold, minimal, dramatic, clean, etc.)
+- Visual hierarchy advice
+
+# WHAT TO AVOID
+- Common mistakes to sidestep
+- Colors/elements that don't work
+
+Make this brief actionable - a designer should be able to create the thumbnail directly from this.
