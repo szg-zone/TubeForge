@@ -1,4 +1,0 @@
-cd "W:\Projects\JAVA\JAVA FINAL TRY\TubeForge 3.0 updated"
-mvnw.cmd spring-boot:run
-
-cd /d "W:\Projects\JAVA\JAVA FINAL TRY\TubeForge 3.0 updated" && mvnw.cmd spring-boot:run
