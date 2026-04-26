@@ -1,0 +1,17 @@
+{
+  "outputDirectory": "target/classes/static",
+  "rewrites": [
+    { "source": "/payment", "destination": "/payment.html" },
+    { "source": "/login", "destination": "/login.html" },
+    { "source": "/api/(.*)", "destination": "/api/$1" },
+    { "source": "/(.*)", "destination": "/index.html" }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "no-cache" }
+      ]
+    }
+  ]
+}
