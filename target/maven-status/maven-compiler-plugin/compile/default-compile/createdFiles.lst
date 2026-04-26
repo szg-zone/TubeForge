@@ -1,6 +1,13 @@
-com\tubeforge\model\AIRequest.class
-com\tubeforge\model\AIResponse.class
 com\tubeforge\config\CorsConfig.class
-com\tubeforge\controller\AIController.class
+com\tubeforge\controller\ImageController.class
 com\tubeforge\TubeForgeApplication.class
+com\tubeforge\model\Membership.class
+com\tubeforge\controller\PaymentController.class
+com\tubeforge\model\AIRequest.class
+com\tubeforge\service\ImageService.class
+com\tubeforge\service\MembershipService.class
+com\tubeforge\model\AIResponse.class
+com\tubeforge\controller\ImageController$ImageRequest.class
+com\tubeforge\controller\AIController.class
+com\tubeforge\model\PaymentVerifyRequest.class
 com\tubeforge\service\AIService.class
