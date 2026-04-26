@@ -16,17 +16,23 @@ import java.time.Duration;
 @Service
 public class AIService {
 
-    @Value("${openrouter.api.key}")
+    @Value("${nvidia.api.key}")
     private String apiKey;
 
-    @Value("${openrouter.api.url}")
+    @Value("${nvidia.api.url}")
     private String apiUrl;
 
-    @Value("${openrouter.model}")
+    @Value("${nvidia.model}")
     private String model;
 
-    @Value("${openrouter.max-tokens}")
+    @Value("${nvidia.max-tokens}")
     private int maxTokens;
+
+    @Value("${nvidia.temperature}")
+    private double temperature;
+
+    @Value("${nvidia.top_p}")
+    private double topP;
 
     private final HttpClient httpClient;
     private final ObjectMapper objectMapper;
@@ -38,27 +44,194 @@ public class AIService {
         this.objectMapper = new ObjectMapper();
     }
 
-    public AIResponse generateIdeas(String niche, String audience) {
-        String prompt = loadPrompt("prompts/ideas-prompt.txt");
+    public AIResponse generateIdeas(String niche, String audience, String idea) {
+        String prompt = """
+            You are a YouTube content strategist. Expand and improve the following video idea concept.
+
+            Channel Niche: {niche}
+            Target Audience: {audience}
+            Original Idea: {idea}
+
+            Generate 3-5 expanded paragraphs (2-5 lines each) that:
+            - Flesh out the concept in more detail
+            - Add unique angles or perspectives
+            - Make it more engaging and click-worthy
+            - Suggest potential hooks or angles
+
+            Format: Numbered paragraphs (1., 2., 3., etc.), no extra explanations.
+            Each paragraph should be a complete thought that can stand alone.
+            """;
+        
         prompt = prompt.replace("{niche}", niche);
         prompt = prompt.replace("{audience}", audience != null && !audience.isEmpty() ? audience : "general audience");
+        prompt = prompt.replace("{idea}", idea != null && !idea.isEmpty() ? idea : "any interesting video concept");
 
         return callAI(prompt);
     }
 
-    public AIResponse generateScript(String title, String audience) {
-        String prompt = loadPrompt("prompts/script-prompt.txt");
-        prompt = prompt.replace("{title}", title);
+    public AIResponse generateTitle(String idea, String niche, String audience, String tone, String hookStyle, String keywords, String targetLength) {
+        String prompt = """
+            Generate 5-7 YouTube title variations for this video idea.
+
+            Idea/Concept: {idea}
+            Channel Niche: {niche}
+            Target Audience: {audience}
+            Tone: {tone}
+            Hook Style: {hookStyle}
+            Keywords to include: {keywords}
+            Target Length: {targetLength}
+
+            Requirements:
+            - Each title should be click-worthy and curiosity-inducing
+            - Vary the approaches (use different hook styles)
+            - Respect the tone: {tone}
+            - Include keywords if specified: {keywords}
+            - Keep within target character length: {targetLength}
+            - Use power words and numbers where appropriate
+            - Do NOT use quotes around titles
+
+            Format: Numbered list only (1. Title here), no explanations.
+            """;
+        
+        prompt = prompt.replace("{idea}", idea);
+        prompt = prompt.replace("{niche}", niche != null && !niche.isEmpty() ? niche : "general");
         prompt = prompt.replace("{audience}", audience != null && !audience.isEmpty() ? audience : "general audience");
+        prompt = prompt.replace("{tone}", tone != null && !tone.isEmpty() ? tone : "Casual");
+        prompt = prompt.replace("{hookStyle}", hookStyle != null && !hookStyle.isEmpty() ? hookStyle : "Leave Optional");
+        prompt = prompt.replace("{keywords}", keywords != null && !keywords.isEmpty() ? keywords : "none specified");
+        prompt = prompt.replace("{targetLength}", targetLength != null && !targetLength.isEmpty() ? targetLength : "Medium");
 
         return callAI(prompt);
     }
 
-    public AIResponse generateThumbnail(String title) {
-        String prompt = loadPrompt("prompts/thumbnail-prompt.txt");
+    public AIResponse generateScript(String title, String idea, String audience, String videoLength, String scriptStyle, String customStyle, String[] sections) {
+        String wordCount = calculateWordCount(videoLength);
+        String styleDescription = getStyleDescription(scriptStyle, customStyle);
+        String sectionsList = buildSectionsList(sections);
+        
+        String prompt = """
+            Write a YouTube video script with these specifications:
+
+            Title: {title}
+            Concept/Idea: {idea}
+            Target Audience: {audience}
+            Video Length: {videoLength} (approximately {wordCount} words)
+            Script Style: {styleDescription}
+            Include Sections: {sectionsList}
+
+            Structure the script clearly with labeled sections:
+            {sectionsList}
+
+            Write in a {styleDescription} style. Make it engaging, conversational, and ready to film.
+            Include timing cues where appropriate.
+            """;
+        
         prompt = prompt.replace("{title}", title);
+        prompt = prompt.replace("{idea}", idea != null && !idea.isEmpty() ? idea : "the video topic");
+        prompt = prompt.replace("{audience}", audience != null && !audience.isEmpty() ? audience : "general audience");
+        prompt = prompt.replace("{videoLength}", videoLength != null && !videoLength.isEmpty() ? videoLength : "5 min");
+        prompt = prompt.replace("{wordCount}", wordCount);
+        prompt = prompt.replace("{styleDescription}", styleDescription);
+        prompt = prompt.replace("{sectionsList}", sectionsList);
 
         return callAI(prompt);
+    }
+
+    public AIResponse generateThumbnail(String sourceType, String title, String idea, String topic) {
+        String content = "title".equals(sourceType) ? title : idea;
+        String contentType = "title".equals(sourceType) ? "video title" : "video idea/concept";
+        
+        String prompt = """
+            Create a detailed, professional thumbnail prompt for a YouTube video.
+
+            Video {contentType}: {content}
+            General Topic/Niche: {topic}
+
+            Include ALL of the following sections:
+
+            1. TEXT OVERLAYS
+               - Main headline text (what words to show)
+               - Secondary text (if any)
+               - Text positioning and size suggestions
+
+            2. COLOR PALETTE
+               - 3-5 hex color codes
+               - Mood they convey (bold, trustworthy, energetic, etc.)
+
+            3. ELEMENTS/OBJECTS
+               - What visual elements to include
+               - Icons, graphics, or objects to feature
+               - Any specific items that grab attention
+
+            4. COMPOSITION
+               - Layout suggestion (rule of thirds, centered, etc.)
+               - Focal points
+               - How to arrange elements on the 16:9 frame
+
+            5. STYLE DIRECTION
+               - Overall aesthetic (realistic, cartoonish, bold, minimalist, etc.)
+               - Reference styles if applicable
+
+            6. SUBJECT/EXPRESSION
+               - Face expressions to capture
+               - Recommended poses
+               - Emotional tone
+
+            7. BACKGROUND/SCENE
+               - What visual scene or setting to use
+               - Props or environment elements
+
+            8. WHAT TO AVOID
+               - Common mistakes for this type of thumbnail
+               - Colors or elements that don't work
+
+            Make this detailed enough for an image generation tool or designer to create an effective, click-worthy thumbnail.
+            """;
+        
+        prompt = prompt.replace("{contentType}", contentType);
+        prompt = prompt.replace("{content}", content != null && !content.isEmpty() ? content : "interesting video content");
+        prompt = prompt.replace("{topic}", topic);
+
+        return callAI(prompt);
+    }
+
+    private String calculateWordCount(String videoLength) {
+        if (videoLength == null) return "750-900";
+        return switch (videoLength) {
+            case "30 sec" -> "75-100";
+            case "1 min" -> "150-200";
+            case "3 min" -> "400-500";
+            case "5 min" -> "750-900";
+            case "10+ min" -> "1500-2000";
+            default -> "750-900";
+        };
+    }
+
+    private String getStyleDescription(String scriptStyle, String customStyle) {
+        if (scriptStyle == null || scriptStyle.isEmpty()) return "MrBeast style (high-energy, fast-paced)";
+        if ("Custom".equals(scriptStyle) && customStyle != null && !customStyle.isEmpty()) {
+            return "style of " + customStyle;
+        }
+        return switch (scriptStyle) {
+            case "MrBeast" -> "MrBeast style (high-energy, fast-paced, retention-focused)";
+            case "Educational" -> "educational/explainer style (clear, structured, informative)";
+            case "Vlog" -> "vlog/casual style (personal, conversational, relatable)";
+            case "Documentary" -> "documentary/cinematic style (storytelling, dramatic, immersive)";
+            case "Review" -> "product review/tutorial style (step-by-step, practical)";
+            default -> "engaging YouTube style";
+        };
+    }
+
+    private String buildSectionsList(String[] sections) {
+        if (sections == null || sections.length == 0) {
+            return "HOOK, INTRODUCTION, MAIN CONTENT, CALL TO ACTION, OUTRO";
+        }
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < sections.length; i++) {
+            if (i > 0) sb.append(", ");
+            sb.append(sections[i].toUpperCase());
+        }
+        return sb.toString();
     }
 
     private AIResponse callAI(String prompt) {
@@ -72,18 +245,19 @@ public class AIService {
                             "content": %s
                         }
                     ],
-                    "max_tokens": %d
+                    "max_tokens": %d,
+                    "temperature": %.1f,
+                    "top_p": %.1f,
+                    "stream": false
                 }
-                """, model, objectMapper.writeValueAsString(prompt), maxTokens);
+                """, model, objectMapper.writeValueAsString(prompt), maxTokens, temperature, topP);
 
             HttpRequest request = HttpRequest.newBuilder()
                     .uri(URI.create(apiUrl))
                     .header("Content-Type", "application/json")
                     .header("Authorization", "Bearer " + apiKey)
-                    .header("HTTP-Referer", "http://localhost:8080")
-                    .header("X-Title", "TubeForge")
                     .POST(HttpRequest.BodyPublishers.ofString(requestBody))
-                    .timeout(Duration.ofSeconds(60))
+                    .timeout(Duration.ofSeconds(120))
                     .build();
 
             HttpResponse<String> response = httpClient.send(request, HttpResponse.BodyHandlers.ofString());
@@ -105,63 +279,6 @@ public class AIService {
         } catch (IOException | InterruptedException e) {
             Thread.currentThread().interrupt();
             return AIResponse.error("Request failed: " + e.getMessage());
-        }
-    }
-
-    private String loadPrompt(String filename) {
-        try {
-            var inputStream = getClass().getClassLoader().getResourceAsStream(filename);
-            if (inputStream == null) {
-                return getDefaultPrompt(filename);
-            }
-            return new String(inputStream.readAllBytes());
-        } catch (IOException e) {
-            return getDefaultPrompt(filename);
-        }
-    }
-
-    private String getDefaultPrompt(String filename) {
-        if (filename.contains("ideas")) {
-            return """
-                You are a YouTube content strategist. Generate 7 unique, high-CTR video title ideas for a YouTube channel about {niche}.
-                
-                Target audience: {audience}
-                
-                Requirements:
-                - Each title should be click-worthy and curiosity-inducing
-                - Use power words and numbers where appropriate
-                - Vary the title styles (questions, how-tos, list videos, controversy, etc.)
-                - Output only the numbered list, no explanations
-                """;
-        } else if (filename.contains("script")) {
-            return """
-                You are a professional YouTube script writer. Write a complete, production-ready video script for a video titled "{title}".
-                
-                Target audience: {audience}
-                
-                Structure required:
-                1. HOOK (first 30 seconds) - Grab attention immediately
-                2. INTRODUCTION - Who you are, what the video is about
-                3. MAIN CONTENT - 3-5 key points with details
-                4. CALL TO ACTION - Subscribe, like, comment
-                5. OUTRO - Wrap up and tease next video
-                
-                Make it engaging, conversational, and ready to film. Include timing cues.
-                """;
-        } else {
-            return """
-                You are a YouTube thumbnail designer expert. Create a detailed thumbnail brief for a video titled "{title}".
-                
-                Include:
-                1. Thumbnail Text - Main headline and secondary text
-                2. Background - What visual/scene to use
-                3. Color Palette - 3 hex codes that work well
-                4. Subject/Face - Expression and pose suggestions
-                5. Style - Overall mood (bold, minimal, dramatic, etc.)
-                6. What to Avoid - Common mistakes
-                
-                Make it actionable enough for a designer to create the thumbnail.
-                """;
         }
     }
 }

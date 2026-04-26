@@ -1,0 +1,14 @@
+{
+  "free@default" : {
+    "plan" : "free",
+    "expiryDate" : "2036-04-23",
+    "requestsUsedToday" : 3,
+    "lastRequestDate" : "2026-04-23"
+  },
+  "sharvin.tejasvi.pvt@gmail.com" : {
+    "plan" : "premium",
+    "expiryDate" : "2036-04-23",
+    "requestsUsedToday" : 4,
+    "lastRequestDate" : "2026-04-26"
+  }
+}
