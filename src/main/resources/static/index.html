@@ -827,6 +827,8 @@ TubeForge
 
 <script src="app.js?v=2"></script>
 <script>
+const API_BASE = '';
+
 function goToApp() {
   document.getElementById('app').scrollIntoView({behavior: 'smooth'});
   setTimeout(function(){ window.location.hash = '#app'; }, 300);
@@ -1046,7 +1048,7 @@ function checkMembershipStatus() {
   const email = localStorage.getItem('tubeforge_email');
   if (!email) return;
   
-  fetch('/api/membership/status?email=' + encodeURIComponent(email))
+  fetch(API_BASE + '/api/membership/status?email=' + encodeURIComponent(email))
     .then(res => res.json())
     .then(data => {
       if (data.result) {

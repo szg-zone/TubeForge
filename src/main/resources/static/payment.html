@@ -82,6 +82,7 @@
 
 <script>
 // Check if user is logged in
+const API_BASE = '';
 if (localStorage.getItem('tubeforge_user')) {
   // User is logged in - redirect to main page
   // window.location.href = 'index.html';
@@ -220,7 +221,7 @@ function checkMembership() {
     return;
   }
   
-  fetch('/api/membership/status?email=' + encodeURIComponent(email))
+  fetch(API_BASE + '/api/membership/status?email=' + encodeURIComponent(email))
     .then(res => res.json())
     .then(data => {
       if (data.result) {
@@ -304,7 +305,7 @@ function verifyPayment() {
   const amount = planConfig[selectedPlan].price;
   
   // Call API
-  fetch('/api/payment/verify', {
+  fetch(API_BASE + '/api/payment/verify', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ email, utr, plan: selectedPlan, amount })

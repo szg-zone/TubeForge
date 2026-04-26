@@ -1,5 +1,8 @@
 // TubeForge - Frontend Application Logic v3.0
 
+// Base URL for API - defaults to same origin, override for external backend
+const API_BASE = '';
+
 // ============================================
 // GLOBAL STATE
 // ============================================
@@ -152,7 +155,7 @@ async function generateIdeas() {
   setButtonLoading('generateIdeas', true);
 
   try {
-    const response = await fetch('/api/ideas', {
+    const response = await fetch(API_BASE + '/api/ideas', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ niche, audience, idea, email: userEmail || 'free@default' })
@@ -193,7 +196,7 @@ async function generateTitles() {
   setButtonLoading('generateTitles', true);
 
   try {
-    const response = await fetch('/api/title', {
+    const response = await fetch(API_BASE + '/api/title', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ idea, niche, audience, tone, hookStyle, keywords, targetLength, email: userEmail || 'free@default' })
@@ -240,7 +243,7 @@ async function generateScript() {
   setButtonLoading('generateScript', true);
 
   try {
-    const response = await fetch('/api/script', {
+    const response = await fetch(API_BASE + '/api/script', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ title, idea, audience, videoLength, scriptStyle, customStyle, sections, email: userEmail || 'free@default' })
@@ -279,7 +282,7 @@ async function generateThumbnail() {
   setButtonLoading('generateThumbnail', true);
 
   try {
-    const response = await fetch('/api/thumbnail', {
+    const response = await fetch(API_BASE + '/api/thumbnail', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ sourceType, title, idea, topic, email: userEmail || 'free@default' })
