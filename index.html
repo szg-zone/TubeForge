@@ -82,18 +82,20 @@
 <nav>
   <div class="logo">
     <div class="logo-icon"><svg class="i" width="18" height="18"><use href="#ic-clapper"/></svg></div>
-    TubeForge
-  </div>
-  <div class="nav-links">
-    <a href="#features">Features</a>
-    <a href="#how">How it works</a>
-    <a href="#app">App</a>
-    <a href="#pricing">Pricing</a>
-  </div>
-  <a href="#app" class="nav-cta">
-    Try for free
+TubeForge
+</div>
+<div class="nav-links">
+  <a href="#features">Features</a>
+  <a href="#how">How it works</a>
+  <a href="#app">App</a>
+  <a href="#pricing" onclick="document.getElementById('pricing').scrollIntoView({behavior:'smooth'}); return false;">Plans</a>
+</div>
+<div id="nav-auth">
+  <a href="login.html" class="nav-cta" id="nav-login-btn">
+    Login
     <svg class="i" width="13" height="13"><use href="#ic-arrow"/></svg>
   </a>
+</div>
 </nav>
 
 
@@ -472,7 +474,7 @@
               <option value="2:3" data-width="720" data-height="1080">Pinterest (2:3)</option>
             </select>
             
-            <button class="app-genbtn app-genbtn-top" id="gen-image-btn" onclick="generateImage()">
+<button class="app-genbtn app-genbtn-top" id="gen-image-btn" onclick="generateImage()">
               <svg class="i" width="16" height="16"><use href="#ic-sparkles"/></svg>
               <span>Generate Image</span>
             </button>
@@ -544,51 +546,67 @@
     <div class="price-grid">
       <div class="pcard">
         <div class="ptier">Free</div>
-        <div class="pamount"><sup>$</sup>0</div>
+        <div class="pamount"><sup>₹</sup>0</div>
         <div class="pperiod">Forever free</div>
         <div class="pdiv"></div>
         <div class="pfeats">
-          <div class="pfeat"><svg class="i on" width="15" height="15"><use href="#ic-check"/></svg> 10 idea generations/month</div>
-          <div class="pfeat"><svg class="i on" width="15" height="15"><use href="#ic-check"/></svg> 5 script generations/month</div>
-          <div class="pfeat"><svg class="i on" width="15" height="15"><use href="#ic-check"/></svg> 5 thumbnail briefs/month</div>
+          <div class="pfeat"><svg class="i on" width="15" height="15"><use href="#ic-check"/></svg> 3 requests/day</div>
+          <div class="pfeat"><svg class="i on" width="15" height="15"><use href="#ic-check"/></svg> Ideas + Script</div>
           <div class="pfeat"><svg class="i on" width="15" height="15"><use href="#ic-check"/></svg> Copy to clipboard</div>
-          <div class="pfeat"><svg class="i off" width="15" height="15"><use href="#ic-x"/></svg> <span class="dim">Unlimited generations</span></div>
-          <div class="pfeat"><svg class="i off" width="15" height="15"><use href="#ic-x"/></svg> <span class="dim">History &amp; saved ideas</span></div>
+          <div class="pfeat"><svg class="i off" width="15" height="15"><use href="#ic-x"/></svg> <span class="dim">Thumbnail Generator</span></div>
+          <div class="pfeat"><svg class="i off" width="15" height="15"><use href="#ic-x"/></svg> <span class="dim">Unlimited requests</span></div>
+          <div class="pfeat"><svg class="i off" width="15" height="15"><use href="#ic-x"/></svg> <span class="dim">Priority support</span></div>
         </div>
-        <button class="pbtn pbtn-o">Get started free</button>
+        <button class="pbtn pbtn-o" onclick="window.location.href='login.html'">Get started free</button>
+      </div>
+
+      <div class="pcard">
+        <div class="ptier">Basic</div>
+        <div class="pamount"><sup>₹</sup>149</div>
+        <div class="pperiod">24 days</div>
+        <div class="pdiv"></div>
+        <div class="pfeats">
+          <div class="pfeat"><svg class="i on" width="15" height="15"><use href="#ic-check"/></svg> 10 requests/day</div>
+          <div class="pfeat"><svg class="i on" width="15" height="15"><use href="#ic-check"/></svg> Ideas + Script</div>
+          <div class="pfeat"><svg class="i on" width="15" height="15"><use href="#ic-check"/></svg> Copy to clipboard</div>
+          <div class="pfeat"><svg class="i off" width="15" height="15"><use href="#ic-x"/></svg> <span class="dim">Thumbnail Generator</span></div>
+          <div class="pfeat"><svg class="i off" width="15" height="15"><use href="#ic-x"/></svg> <span class="dim">Unlimited requests</span></div>
+          <div class="pfeat"><svg class="i off" width="15" height="15"><use href="#ic-x"/></svg> <span class="dim">Priority support</span></div>
+        </div>
+        <button class="pbtn pbtn-o" onclick="window.location.href='payment.html'">Get Basic — ₹149</button>
       </div>
 
       <div class="pcard pop">
         <div class="pop-badge">Most Popular</div>
         <div class="ptier">Pro</div>
-        <div class="pamount"><sup>$</sup>28</div>
-        <div class="pperiod">per month · billed monthly</div>
+        <div class="pamount"><sup>₹</sup>349</div>
+        <div class="pperiod">24 days</div>
         <div class="pdiv"></div>
         <div class="pfeats">
-          <div class="pfeat"><svg class="i on" width="15" height="15"><use href="#ic-check"/></svg> Unlimited idea generations</div>
-          <div class="pfeat"><svg class="i on" width="15" height="15"><use href="#ic-check"/></svg> Unlimited scripts</div>
-          <div class="pfeat"><svg class="i on" width="15" height="15"><use href="#ic-check"/></svg> Unlimited thumbnail briefs</div>
-          <div class="pfeat"><svg class="i on" width="15" height="15"><use href="#ic-check"/></svg> Export scripts to PDF</div>
-          <div class="pfeat"><svg class="i on" width="15" height="15"><use href="#ic-check"/></svg> Full history &amp; saved ideas</div>
-          <div class="pfeat"><svg class="i on" width="15" height="15"><use href="#ic-check"/></svg> Priority AI response speed</div>
+          <div class="pfeat"><svg class="i on" width="15" height="15"><use href="#ic-check"/></svg> 25 requests/day</div>
+          <div class="pfeat"><svg class="i on" width="15" height="15"><use href="#ic-check"/></svg> Ideas + Script + Thumbnail</div>
+          <div class="pfeat"><svg class="i on" width="15" height="15"><use href="#ic-check"/></svg> Copy to clipboard</div>
+          <div class="pfeat"><svg class="i on" width="15" height="15"><use href="#ic-check"/></svg> Image Generator</div>
+          <div class="pfeat"><svg class="i off" width="15" height="15"><use href="#ic-x"/></svg> <span class="dim">Unlimited requests</span></div>
+          <div class="pfeat"><svg class="i off" width="15" height="15"><use href="#ic-x"/></svg> <span class="dim">Priority support</span></div>
         </div>
-        <button class="pbtn pbtn-g">Start Pro — $28/mo</button>
+        <button class="pbtn pbtn-g" onclick="window.location.href='payment.html'">Get Pro — ₹349</button>
       </div>
 
       <div class="pcard">
-        <div class="ptier">Team</div>
-        <div class="pamount"><sup>$</sup>56</div>
-        <div class="pperiod">per month · up to 5 seats</div>
+        <div class="ptier">Premium</div>
+        <div class="pamount"><sup>₹</sup>699</div>
+        <div class="pperiod">Lifetime</div>
         <div class="pdiv"></div>
         <div class="pfeats">
-          <div class="pfeat"><svg class="i on" width="15" height="15"><use href="#ic-check"/></svg> Everything in Pro</div>
-          <div class="pfeat"><svg class="i on" width="15" height="15"><use href="#ic-check"/></svg> Up to 5 team members</div>
-          <div class="pfeat"><svg class="i on" width="15" height="15"><use href="#ic-check"/></svg> Shared content library</div>
-          <div class="pfeat"><svg class="i on" width="15" height="15"><use href="#ic-check"/></svg> Team history &amp; comments</div>
-          <div class="pfeat"><svg class="i on" width="15" height="15"><use href="#ic-check"/></svg> Admin dashboard</div>
-          <div class="pfeat"><svg class="i on" width="15" height="15"><use href="#ic-check"/></svg> Dedicated support</div>
+          <div class="pfeat"><svg class="i on" width="15" height="15"><use href="#ic-check"/></svg> Unlimited requests</div>
+          <div class="pfeat"><svg class="i on" width="15" height="15"><use href="#ic-check"/></svg> All features</div>
+          <div class="pfeat"><svg class="i on" width="15" height="15"><use href="#ic-check"/></svg> Copy to clipboard</div>
+          <div class="pfeat"><svg class="i on" width="15" height="15"><use href="#ic-check"/></svg> Image Generator</div>
+          <div class="pfeat"><svg class="i on" width="15" height="15"><use href="#ic-check"/></svg> Priority support</div>
+          <div class="pfeat"><svg class="i on" width="15" height="15"><use href="#ic-check"/></svg> Lifetime access</div>
         </div>
-        <button class="pbtn pbtn-o">Start Team Plan</button>
+        <button class="pbtn pbtn-o" onclick="window.location.href='payment.html'">Get Premium — ₹699</button>
       </div>
     </div>
   </div>
@@ -689,5 +707,303 @@
 </footer>
 
 <script src="app.js?v=2"></script>
+<script>
+function goToApp() {
+  document.getElementById('app').scrollIntoView({behavior: 'smooth'});
+  setTimeout(function(){ window.location.hash = '#app'; }, 300);
+}
+
+function goToPlans(plan) {
+  var appEl = document.getElementById('app');
+  if(appEl) {
+    appEl.scrollIntoView({behavior: 'smooth'});
+  }
+  setTimeout(function() {
+    var tabs = document.querySelectorAll('.atab');
+    tabs.forEach(function(t) { t.classList.remove('on'); });
+    var plansTab = document.querySelector('[data-tab="plans"]');
+    if(plansTab) {
+      plansTab.classList.add('on');
+      plansTab.click();
+      setTimeout(function() {
+        var tabContent = document.getElementById('tab-plans');
+        if(tabContent) { tabContent.style.display = 'block'; }
+        if(typeof selectPlan === 'function') {
+          selectPlan(plan);
+        }
+      }, 300);
+      var otherTabs = ['ideas','script','thumbnail','membership'];
+      otherTabs.forEach(function(t) {
+        var el = document.getElementById('tab-' + t);
+        if(el) { el.style.display = 'none'; }
+      });
+    }
+  }, 500);
+}
+
+function startApp() {
+  goToApp();
+}
+
+function getPro() { goToPlans('pro'); }
+function getBasic() { goToPlans('basic'); }
+function getPremium() { goToPlans('premium'); }
+
+// Profile dropdown functions
+function initProfile() {
+  updateNavAuth();
+  checkMembershipStatus();
+}
+
+function updateNavAuth() {
+  const user = localStorage.getItem('tubeforge_user');
+  const navAuth = document.getElementById('nav-auth');
+  if (!navAuth) return;
+  
+  if (user) {
+    const userData = JSON.parse(user);
+    navAuth.innerHTML = `
+      <div class="profile-dropdown">
+        <button class="profile-btn" onclick="toggleProfileDropdown()">
+          <span class="profile-name">${userData.name || userData.email}</span>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="profile-menu" id="profile-menu">
+          <div class="profile-menu-item" onclick="event.stopPropagation(); openProfileModal();">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            My Profile
+          </div>
+          <div class="profile-menu-item" onclick="event.stopPropagation(); openMembershipModal();">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            My Plan
+          </div>
+          <div class="profile-menu-item" onclick="event.stopPropagation(); window.location.href='payment.html'">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            Upgrade Plan
+          </div>
+          <div class="profile-menu-divider"></div>
+          <div class="profile-menu-item logout" onclick="event.stopPropagation(); handleLogout();">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+            Logout
+          </div>
+        </div>
+      </div>
+    `;
+  } else {
+    navAuth.innerHTML = `
+      <a href="login.html" class="nav-cta">
+        Login
+        <svg class="i" width="13" height="13"><use href="#ic-arrow"/></svg>
+      </a>
+    `;
+  }
+}
+
+function toggleProfileDropdown() {
+  const menu = document.getElementById('profile-menu');
+  if (menu) {
+    menu.classList.toggle('show');
+  }
+}
+
+function handleLogout() {
+  localStorage.removeItem('tubeforge_user');
+  localStorage.removeItem('tubeforge_email');
+  window.location.href = 'index.html';
+}
+
+function openProfileModal() {
+  const user = JSON.parse(localStorage.getItem('tubeforge_user') || {});
+  const modal = document.getElementById('profile-modal');
+  if (modal) {
+    document.getElementById('profile-name').value = user.name || '';
+    document.getElementById('profile-email').value = user.email || '';
+    modal.classList.add('active');
+  }
+  toggleProfileDropdown();
+}
+
+function closeProfileModal() {
+  document.getElementById('profile-modal').classList.remove('active');
+}
+
+function saveProfile() {
+  const name = document.getElementById('profile-name').value.trim();
+  const email = document.getElementById('profile-email').value.trim();
+  const currentPassword = document.getElementById('profile-current-password').value;
+  const newPassword = document.getElementById('profile-new-password').value;
+  const confirmPassword = document.getElementById('profile-confirm-password').value;
+  const errorEl = document.getElementById('profile-error');
+  const successEl = document.getElementById('profile-success');
+  
+  errorEl.style.display = 'none';
+  successEl.style.display = 'none';
+  
+  if (!email || !email.includes('@')) {
+    errorEl.textContent = 'Please enter a valid email';
+    errorEl.style.display = 'block';
+    return;
+  }
+  
+  // Update user in storage
+  const users = JSON.parse(localStorage.getItem('tubeforge_users') || '[]');
+  const currentUser = JSON.parse(localStorage.getItem('tubeforge_user'));
+  const userIndex = users.findIndex(u => u.email === currentUser.email);
+  
+  if (userIndex !== -1) {
+    // If changing password, verify current password
+    if (newPassword) {
+      if (currentPassword !== users[userIndex].password) {
+        errorEl.textContent = 'Current password is incorrect';
+        errorEl.style.display = 'block';
+        return;
+      }
+      if (newPassword.length < 6) {
+        errorEl.textContent = 'New password must be at least 6 characters';
+        errorEl.style.display = 'block';
+        return;
+      }
+      if (newPassword !== confirmPassword) {
+        errorEl.textContent = 'New passwords do not match';
+        errorEl.style.display = 'block';
+        return;
+      }
+      users[userIndex].password = newPassword;
+    }
+    
+    users[userIndex].name = name;
+    users[userIndex].email = email;
+    localStorage.setItem('tubeforge_users', JSON.stringify(users));
+    
+    // Update current user session
+    localStorage.setItem('tubeforge_user', JSON.stringify(users[userIndex]));
+    localStorage.setItem('tubeforge_email', email);
+    
+    successEl.textContent = 'Profile updated successfully!';
+    successEl.style.display = 'block';
+    
+    updateNavAuth();
+    
+    setTimeout(closeProfileModal, 1500);
+  }
+}
+
+function openMembershipModal() {
+  checkMembershipStatus();
+  const modal = document.getElementById('membership-modal');
+  if (modal) {
+    modal.classList.add('active');
+  }
+  toggleProfileDropdown();
+}
+
+function closeMembershipModal() {
+  document.getElementById('membership-modal').classList.remove('active');
+}
+
+function checkMembershipStatus() {
+  const email = localStorage.getItem('tubeforge_email');
+  if (!email) return;
+  
+  fetch('/api/membership/status?email=' + encodeURIComponent(email))
+    .then(res => res.json())
+    .then(data => {
+      if (data.result) {
+        const planMatch = data.result.match(/Plan: (\w+)/);
+        const limitMatch = data.result.match(/Daily Limit: (\d+)/);
+        const usedMatch = data.result.match(/Used Today: (\d+)/);
+        const expiryMatch = data.result.match(/Expires: ([\d-]+)/);
+        
+        document.getElementById('membership-plan').textContent = planMatch ? planMatch[1] + ' Plan' : 'Free Plan';
+        document.getElementById('membership-limit').textContent = limitMatch ? limitMatch[1] + ' requests/day' : '3 requests/day';
+        document.getElementById('membership-used').textContent = usedMatch ? usedMatch[1] + ' used today' : '0 used today';
+        document.getElementById('membership-expiry').textContent = expiryMatch ? expiryMatch[1] : 'Never';
+      }
+    })
+    .catch(err => {
+      document.getElementById('membership-plan').textContent = 'Free Plan';
+    });
+}
+
+// Initialize profile on page load
+document.addEventListener('DOMContentLoaded', function() {
+  initTabs();
+  initScrollAnimations();
+  initNavHighlight();
+  initProfile();
+});
+
+// Close dropdown when clicking outside
+document.addEventListener('click', function(e) {
+  if (!e.target.closest('.profile-dropdown')) {
+    const menu = document.getElementById('profile-menu');
+    if (menu) menu.classList.remove('show');
+  }
+});
+</script>
+
+<!-- Profile Modal -->
+<div class="modal-overlay" id="profile-modal" style="display:none;">
+  <div class="modal-content" style="max-width:450px;">
+    <button class="modal-close" onclick="closeProfileModal()">&times;</button>
+    
+    <h3 style="font-family:'Syne',sans-serif;font-size:20px;margin-bottom:20px;">My Profile</h3>
+    
+    <div class="form-group">
+      <label>Name</label>
+      <input type="text" id="profile-name" placeholder="Your name" />
+    </div>
+    
+    <div class="form-group">
+      <label>Email</label>
+      <input type="email" id="profile-email" placeholder="your@email.com" />
+    </div>
+    
+    <div class="modal-divider">Change Password</div>
+    
+    <div class="form-group">
+      <label>Current Password</label>
+      <input type="password" id="profile-current-password" placeholder="Enter current password" />
+    </div>
+    
+    <div class="form-group">
+      <label>New Password</label>
+      <input type="password" id="profile-new-password" placeholder="Enter new password" />
+    </div>
+    
+    <div class="form-group">
+      <label>Confirm New Password</label>
+      <input type="password" id="profile-confirm-password" placeholder="Confirm new password" />
+    </div>
+    
+    <button class="submit-btn" onclick="saveProfile()">Save Changes</button>
+    
+    <div class="error-msg" id="profile-error"></div>
+    <div class="success-msg" id="profile-success"></div>
+  </div>
+</div>
+
+<!-- Membership Modal -->
+<div class="modal-overlay" id="membership-modal" style="display:none;">
+  <div class="modal-content" style="max-width:400px;">
+    <button class="modal-close" onclick="closeMembershipModal()">&times;</button>
+    
+    <h3 style="font-family:'Syne',sans-serif;font-size:20px;margin-bottom:20px;">My Plan</h3>
+    
+    <div class="membership-display">
+      <div class="membership-plan-name" id="membership-plan">Free Plan</div>
+      <div class="membership-stats">
+        <div><span>Daily Limit:</span> <span id="membership-limit">3 requests/day</span></div>
+        <div><span>Used Today:</span> <span id="membership-used">0</span></div>
+        <div><span>Expires:</span> <span id="membership-expiry">Never</span></div>
+      </div>
+    </div>
+    
+    <button class="submit-btn" onclick="window.location.href='payment.html'; closeMembershipModal();">
+      Upgrade Plan
+    </button>
+  </div>
+</div>
+
 </body>
 </html>
