@@ -1,7 +1,7 @@
 // TubeForge - Frontend Application Logic v3.0
 
-// Base URL for API - defaults to same origin, override for external backend
-const API_BASE = '';
+// Base URL for API - Railway backend
+const API_BASE = 'https://tubeforge-production-a573.up.railway.app';
 
 // ============================================
 // GLOBAL STATE
