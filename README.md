@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="src/main/resources/static/logo.png" alt="TubeForge" width="300" />
+<img src="src/main/resources/Web Images-Vids/Logo.png" alt="TubeForge" width="300" />
 
 ### AI-Powered Content Creation Assistant for YouTubers
 
