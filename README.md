@@ -144,7 +144,7 @@
 <div align="center">
 
 ### AI Services
-<a href="https://www.nvidia.com/en-us/ai-enterprise/">
+<a href="https://docs.api.nvidia.com/">
   <img src="src/main/resources/Web-Images-Vids/Nvidia_Sponsor.png" alt="NVIDIA" width="400" />
 </a>
 <a href="https://picsart.com/">
