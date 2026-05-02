@@ -133,9 +133,6 @@
 <img src="src/main/resources/Web-Images-Vids/TheApp_Idea.png" alt="App - Ideas" width="800" />
 <img src="src/main/resources/Web-Images-Vids/TheApp_Thumbnail.png" alt="App - Thumbnail" width="800" />
 
-### App in Laptop View
-<img src="src/main/resources/Web-Images-Vids/Landing_In_Laptop.png" alt="Laptop View" width="800" />
-
 </div>
 
 ### Demo Videos
@@ -520,10 +517,10 @@ All endpoints return:
 
 ### AI Services
 <a href="https://www.nvidia.com/en-us/ai-enterprise/">
-  <img src="src/main/resources/Web-Images-Vids/Nvidia_Sponsor.png" alt="NVIDIA" width="200" />
+  <img src="src/main/resources/Web-Images-Vids/Nvidia_Sponsor.png" alt="NVIDIA" width="400" />
 </a>
 <a href="https://picsart.com/">
-  <img src="src/main/resources/Web-Images-Vids/Picsart_Sponsor.png" alt="Picsart" width="200" />
+  <img src="src/main/resources/Web-Images-Vids/Picsart_Sponsor.png" alt="Picsart" width="400" />
 </a>
 
 </div>
@@ -637,10 +634,7 @@ This project is licensed under the **MIT License** - free to use, modify, and di
 [https://github.com/szg-zone/TubeForge/issues](https://github.com/szg-zone/TubeForge/issues)
 
 **Live Demo (Frontend):**  
-[https://tubeforge.vercel.app](https://tubeforge.vercel.app)
-
-**Live API (Backend):**  
-[https://tubeforge-production-xxxx.railway.app](https://tubeforge.railway.app)
+[https://tube-forge-orcin.vercel.app/](https://tube-forge-orcin.vercel.app/)
 
 </div>
 
