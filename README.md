@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="src/main/resources/Web Images-Vids/Logo.png" alt="TubeForge" width="300" />
+<img src="src/main/resources/Web-Images-Vids/Logo.png" alt="TubeForge" width="300" />
 
 ### AI-Powered Content Creation Studio for YouTubers
 
@@ -127,14 +127,14 @@
 <div align="center">
 
 ### Landing Page
-<img src="src/main/resources/Web Images-Vids/Landing Page.png" alt="Landing Page" width="800" />
+<img src="src/main/resources/Web-Images-Vids/Landing Page.png" alt="Landing Page" width="800" />
 
 ### App Interface
-<img src="src/main/resources/Web Images-Vids/TheApp_Idea.png" alt="App - Ideas" width="800" />
-<img src="src/main/resources/Web Images-Vids/TheApp_Thumbnail.png" alt="App - Thumbnail" width="800" />
+<img src="src/main/resources/Web-Images-Vids/TheApp_Idea.png" alt="App - Ideas" width="800" />
+<img src="src/main/resources/Web-Images-Vids/TheApp_Thumbnail.png" alt="App - Thumbnail" width="800" />
 
 ### App in Laptop View
-<img src="src/main/resources/Web Images-Vids/Landing_In_Laptop.png" alt="Laptop View" width="800" />
+<img src="src/main/resources/Web-Images-Vids/Landing_In_Laptop.png" alt="Laptop View" width="800" />
 
 </div>
 
@@ -142,13 +142,13 @@
 
 <div align="center">
 
-<a href="src/main/resources/Web Images-Vids/The App.mp4">
-  <img src="src/main/resources/Web Images-Vids/TheApp_Thumbnail.png" alt="Watch App Demo" width="400" />
+<a href="src/main/resources/Web-Images-Vids/The App.mp4">
+  <img src="src/main/resources/Web-Images-Vids/TheApp_Thumbnail.png" alt="Watch App Demo" width="400" />
   <p><em>Watch App Demo →</em></p>
 </a>
 
-<a href="src/main/resources/Web Images-Vids/Thumbnail!!.mp4">
-  <img src="src/main/resources/Web Images-Vids/TheApp_Thumbnail.png" alt="Watch Thumbnail Demo" width="400" />
+<a href="src/main/resources/Web-Images-Vids/Thumbnail!!.mp4">
+  <img src="src/main/resources/Web-Images-Vids/TheApp_Thumbnail.png" alt="Watch Thumbnail Demo" width="400" />
   <p><em>Watch Thumbnail Generation →</em></p>
 </a>
 
@@ -520,10 +520,10 @@ All endpoints return:
 
 ### AI Services
 <a href="https://www.nvidia.com/en-us/ai-enterprise/">
-  <img src="src/main/resources/Web Images-Vids/Nvidia_Sponsor.png" alt="NVIDIA" width="200" />
+  <img src="src/main/resources/Web-Images-Vids/Nvidia_Sponsor.png" alt="NVIDIA" width="200" />
 </a>
 <a href="https://picsart.com/">
-  <img src="src/main/resources/Web Images-Vids/Picsart_Sponsor.png" alt="Picsart" width="200" />
+  <img src="src/main/resources/Web-Images-Vids/Picsart_Sponsor.png" alt="Picsart" width="200" />
 </a>
 
 </div>
@@ -648,7 +648,7 @@ This project is licensed under the **MIT License** - free to use, modify, and di
 
 <div align="center">
 
-<img src="src/main/resources/Web Images-Vids/Logo.png" alt="TubeForge" width="140" />
+<img src="src/main/resources/Web-Images-Vids/Logo.png" alt="TubeForge" width="140" />
 
 *Built to help creators spend less time planning and more time creating.*
 
