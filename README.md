@@ -130,23 +130,25 @@
 <img src="src/main/resources/Web-Images-Vids/Landing Page.png" alt="Landing Page" width="800" />
 
 ### App Interface
-<img src="src/main/resources/Web-Images-Vids/TheApp_Idea.png" alt="App - Ideas" width="800" />
-<img src="src/main/resources/Web-Images-Vids/TheApp_Thumbnail.png" alt="App - Thumbnail" width="800" />
+<div align="center">
+  <img src="src/main/resources/Web-Images-Vids/TheApp_Idea.png" width="48%" />
+  <img src="src/main/resources/Web-Images-Vids/TheApp_Thumbnail.png" width="48%" />
+</div>
 
 </div>
 
-### Demo Videos
+---
+
+## Sponsors
 
 <div align="center">
 
-<a href="src/main/resources/Web-Images-Vids/The App.mp4">
-  <img src="src/main/resources/Web-Images-Vids/TheApp_Thumbnail.png" alt="Watch App Demo" width="400" />
-  <p><em>Watch App Demo →</em></p>
+### AI Services
+<a href="https://www.nvidia.com/en-us/ai-enterprise/">
+  <img src="src/main/resources/Web-Images-Vids/Nvidia_Sponsor.png" alt="NVIDIA" width="400" />
 </a>
-
-<a href="src/main/resources/Web-Images-Vids/Thumbnail!!.mp4">
-  <img src="src/main/resources/Web-Images-Vids/TheApp_Thumbnail.png" alt="Watch Thumbnail Demo" width="400" />
-  <p><em>Watch Thumbnail Generation →</em></p>
+<a href="https://picsart.com/">
+  <img src="src/main/resources/Web-Images-Vids/Picsart_Sponsor.png" alt="Picsart" width="400" />
 </a>
 
 </div>
@@ -158,46 +160,47 @@
 <div align="center">
 
 ```
-┌─────────────────────────────────────────────────────────┐
-│                        USER                                 │
-└─────────────────────────────┬───────────────────────────┘
-                          │
-                          ▼
-┌─────────────────────────────────────────────────────────┐
-│                    VERCEL (Frontend)                       │
-│  https://tubeforge.vercel.app                              │
-│                                                             │
-│  • index.html                                           │
-│  • payment.html                                        │
-│  • login.html                                        │
-│  • app.js → calls Railway API                          │
-└─────────────────────────────┬───────────────────────────┘
-                            │
-         ┌──────────────────┴──────────────────┐
-         │                                   │
-         ▼                                   ▼
-   Direct API (mock)                   Railway API
-   /api/* (fails)         ──────►  https://tubeforge-xxx.railway.app/api/*
-                                    │
-                                    ▼
-                         ┌────────────────────────────────┐
-                         │   SPRING BOOT BACKEND            │
-                         │   • /api/ideas                 │
-                         │   • /api/title                │
-                         │   • /api/script               │
-                         │   • /api/thumbnail            │
-                         │   • /api/image/generate       │
-                         │   • /api/payment/verify       │
-                         │   • /api/membership/status    │
-                         └───────────┬──────────────────────┘
-                                     │
-                         ┌─────────┴─────────┐
-                         │                        │
-                         ▼                        ▼
-              ┌─────────────────┐    ┌─────────────────┐
-              │   NVIDIA API    │    │  Picsart API   │
-              │   (Qwen3-Next) │    │   (Image Gen)  │
-              └─────────────────┘    └─────────────────┘
+┌──────────────────────────────────────────────┐
+│                    USER                      │
+└────────────────────────┬─────────────────────┘
+                         │
+                         ▼
+┌──────────────────────────────────────────────┐
+│            VERCEL (Frontend)                 │
+│  https://tubeforge.vercel.app                │
+│                                              │
+│  • index.html                               │
+│  • payment.html                             │
+│  • login.html                               │
+│  • app.js → calls Railway API               │
+└────────────────────────┬─────────────────────┘
+                         │
+          ┌──────────────┴──────────────┐
+          │                             │
+          ▼                             ▼
+   Direct API (mock)            Railway API
+   /api/* (fails)      ────►  /api/*
+                                │
+                                ▼
+                ┌────────────────────────────────┐
+                │       SPRING BOOT BACKEND      │
+                │                                │
+                │  • /api/ideas                  │
+                │  • /api/title                  │
+                │  • /api/script                 │
+                │  • /api/thumbnail              │
+                │  • /api/image/generate         │
+                │  • /api/payment/verify         │
+                │  • /api/membership/status      │
+                └──────────────┬─────────────────┘
+                               │
+                   ┌───────────┴───────────┐
+                   │                       │
+                   ▼                       ▼
+        ┌──────────────────┐   ┌──────────────────┐
+        │    NVIDIA API    │   │   Picsart API    │
+        │   (Qwen3-Next)   │   │   Image Gen      │
+        └──────────────────┘   └──────────────────┘
 ```
 
 </div>
@@ -320,6 +323,26 @@ Open [http://localhost:8080](http://localhost:8080) in your browser.
 
 ---
 
+### Web Working Videos
+
+<div align="center">
+
+<video src="https://github.com/user-attachments/assets/16fe66a8-0490-4fb1-aa63-80c0cd7b5db9"
+       width="360"
+       controls
+       style="display:inline-block; margin:10px;">
+</video>
+
+<video src="https://github.com/user-attachments/assets/edad3a00-645d-42fb-a1d1-598bf5613038"
+       width="360"
+       controls
+       style="display:inline-block; margin:10px;">
+</video>
+
+</div>
+
+---
+
 ## Deployment Guide
 
 ### Backend (Railway)
@@ -402,7 +425,7 @@ The `vercel.json` file handles routing:
 
 Vercel auto-deploys from `main` branch. Your frontend will be at:
 ```
-https://tubeforge.vercel.app
+https://tube-forge-orcin.vercel.app/
 ```
 
 ---
@@ -508,22 +531,6 @@ All endpoints return:
 - Automatic daily reset of `used_today`
 - Plan-based feature access (thumbnail for Pro+)
 - Request counting with limit enforcement
-
----
-
-## Sponsors
-
-<div align="center">
-
-### AI Services
-<a href="https://www.nvidia.com/en-us/ai-enterprise/">
-  <img src="src/main/resources/Web-Images-Vids/Nvidia_Sponsor.png" alt="NVIDIA" width="400" />
-</a>
-<a href="https://picsart.com/">
-  <img src="src/main/resources/Web-Images-Vids/Picsart_Sponsor.png" alt="Picsart" width="400" />
-</a>
-
-</div>
 
 ---
 
